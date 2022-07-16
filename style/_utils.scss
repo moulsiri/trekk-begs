@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'gilroy';
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+a{
+    text-decoration:none;
+}
+main{
+    // min-height:100vh;
+    width:100%;
+
+}
+@mixin flex {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+@mixin mobile($mobile){
+    @media (max-width:$mobile) {
+        @content;
+        
+    }
+    
+}
+@mixin center($top:50%,$left:50%){
+    position: absolute;
+    top:$top;
+    left:$left;
+    transform: translate(-50%,-50%);
+    
+}
+$font-size:(
+    "xxs":.6em,
+    "xs":.7em,
+    "s":.8em,
+    "m":1.5em,
+    "l":7.5em
+);
+@function font-size($size){
+    @return map-get($font-size, $size )
+}
+$clr1:#283618;
+$clr2:#E4470D;

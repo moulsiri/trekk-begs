@@ -1,0 +1,350 @@
+@import './utils';
+
+//Navbar
+nav{
+    @include flex;
+    // position:sti;
+    padding-left:4em;
+    padding-right: 2em;
+    width: 80vw;
+    height: 20vh;
+    font-size: 20px;
+    // position: fixed;
+    // background-color: black;
+    @include mobile(1200px){
+        padding:0 2em;
+        width: 100vw;
+
+    }
+    @include mobile(750px){
+        font-size: 15px;
+        height: 10vh;
+    }
+    // there are two parts of nav bar 
+    #nlft{
+    width:40vw;
+    // font-size: 10px;
+    // background-color: yellow;
+    @include flex;
+    a{
+        margin-right:1em; 
+        font-size: font-size(s);
+        letter-spacing: .05em;
+        color:$clr1;
+    
+    }
+    #nlinks{
+        @include mobile(650px){
+            display:none;
+        }
+    }
+    @include mobile(1200px){
+        width: 50vw
+    }
+    @include mobile(900px){
+        width: 60vw
+    }
+    
+  
+
+    }
+    #nrt{
+        @include flex;
+        width: 8vw;
+        padding: 0 .5em;
+        // background-color: red;
+        #cart{
+            position: relative;
+            @include mobile(650px){
+                display: none;
+            }
+            span{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                position:absolute;
+                width: 1em;
+                height: 1em;
+                background-color: $clr2;
+                color:white;
+                border-radius: 50%;
+                font-size: 15px;
+                p{
+                    font-size: 11px;
+                }
+                top:-10%;
+                left: 10%;
+                
+            }
+            
+        }
+        i{
+            color:$clr1;
+            font-size: 1.2em;
+            @include mobile(650px){
+                display: none;
+            }
+        }
+        #menuIcon{
+            display: none;
+            @include mobile(650px){
+                display:initial;
+            }
+        }
+    }
+
+
+}
+#logo{
+    h3{
+        font-size:font-size(m);
+        letter-spacing: .05em;
+        font-weight:500;
+        color:$clr1;
+        span{
+            color: $clr2;
+        }
+
+    }
+    p{
+        font-size: .7em;
+        letter-spacing: .1em;
+        color:$clr1;
+
+    }
+}
+
+// css for introductory photos and videos in hero section
+#hero{
+    height: 100vh;
+    width:100%;
+    // background-color: rgba(127, 255, 212, 0.329);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+#midVideo{
+        width: 28%;
+        height: 80vh;
+        background-color: #fff;
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.336);
+        @include mobile(900px){
+            width: 60%;
+        }
+        @include mobile(600px){
+            width: 45vw;
+        }
+        #midImage{
+            width: 90%;
+            height: 75vh;
+            background-color: rgba(255, 255, 0, 0.342);
+            overflow: hidden;
+            img{
+                width: 100%;
+                object-position: center;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+        #girl{
+            width: 150%;
+            @include mobile(600px){
+                width: 210%;
+            };
+            position: absolute;
+            z-index: 99999 !important;
+            
+        }
+        #midtxt{
+            font-size: 6em;
+                font-family: 'greyst';
+                font-weight: 100;
+                text-align: center;
+                line-height: 1.2em;
+                color: $clr1;
+                // letter-spacing: .1em;
+                position: absolute;
+                color: #fff;
+                @include center(15%);
+                z-index: 3;
+        }
+        
+      
+    
+    
+}
+#sidevideos{
+    width: 50vw;
+    height: 50vh;
+    // background-color: aqua;
+    position: absolute;
+    @include center(30%);
+    @include flex;
+    @include mobile(1200px){
+        width: 80vw;
+    }
+    @include mobile(900px){
+        width: 90vw;
+    }
+    @include mobile(600px){
+        height: 40vh;
+        top:40%;
+    }
+    
+
+    .sidevideo{
+        width: 30%;
+        height: inherit;
+        background-color: rgba(102, 51, 153, 0.322);
+        @include mobile(900px){
+            width: 40%;
+        }
+        overflow: hidden;
+        opacity: .6;
+        video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+   
+}
+
+#sideBars{
+    width: 100%;
+    height: 100vh;
+    // background-color: rebeccapurple;
+    position: fixed;
+    overflow: hidden;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    .sideBox{
+        @include mobile(1200px){
+            display: none;
+        }
+        flex-basis: 22%;
+        height: inherit;
+        // background-color: rgba(17, 0, 255, 0.151);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        .orngeBox{
+            width: 13vw;
+            height: 32vh;
+            background-color:$clr2;
+            perspective: 386px;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+
+
+        }
+        .video{
+            width: 13vw;
+            height: 40vh;
+            position: absolute;
+            bottom: 15%;
+            left: 17%;
+            z-index: 5;
+            background-color: rgba(255, 255, 0, 0.356);
+            transform: rotateX(0deg) rotateY(139deg);
+            transform-style: preserve-3d;
+            img{
+                width: 15vw;
+            height: 40vh;
+            object-fit: cover;
+            }
+        }
+        svg{
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: -56%;
+            left: -26%;
+            circle{
+                cx:50%;
+               cy:50% ;
+               r:40%; 
+               stroke:$clr1; 
+               stroke-width:1; 
+               fill:transparent;
+            }
+        }
+        p{
+            font-size: font-size("xxs");
+            color:$clr1;
+            position: absolute;
+            text-align: center;
+            line-height: 1.2em;
+            width: 80%;
+            top: -70%;
+            left: 8%;
+        }
+    }
+    #rightBx{
+        @include mobile(1200px){
+            display: none;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      
+        .video{
+            width: 15vw;
+            height: 40vh;
+            position: absolute;
+            top: 12%;
+            left: -14%;
+            transform: rotateX(1deg) rotateY(219deg);
+            transform-style: preserve-3d;
+            video{
+                width: 15vw;
+            height: 40vh;
+            object-fit: cover;
+            }
+
+        }
+        svg{
+            top: 76%;
+            left: 48%;
+        }
+        p{
+            top: 158%;
+            left: -7%
+        }
+    }
+
+
+}
+//main heading
+#heading{
+    @include center(8%);
+    z-index: 2;
+    // background-color: aqua;
+    h1{
+        font-size: font-size("l");
+        font-family: 'greyst';
+        font-weight: 100;
+        text-align: center;
+        line-height: 1.2em;
+        color: $clr1;
+        letter-spacing: .1em;
+    }
+    
+}
+#overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.822);
+    position: absolute;
+    opacity: 0;
+    z-index: 9999;
+}
